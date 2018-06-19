@@ -89,6 +89,9 @@ function coords3dFactory(x, y, z) {
   };
 }
 
+// ES6
+const coords3dFactoryES6 = (x = 0, y = 0, z = 0) => ({x, y, z});
+
 
 const coords3dA = coords3dFactory(10, 20);
 console.log(coords3dA.x); // 10
@@ -113,7 +116,12 @@ function Coords(x, y, z) {
 }
 
 Coords.getClass = function () { return 'Coords'; };
-Coords.prototype.getX = function () { return this.x; };
+Coords.prototype.getX = function () {
+  return this.x;
+};
+
+
+console.log(typeof Coords); // function
 
 const coords3d1 = new Coords(10, 20);
 console.log(typeof coords3d1); // object

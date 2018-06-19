@@ -41,7 +41,7 @@ function jouer() {
     console.log('Vous avez déjà joué : ' + essais.join(' | '));
   }
 
-  rl.question('What do you think of Node.js? ', (answer) => {
+  rl.question('Quel est le nombre ? ', (answer) => {
 
     const entierSaisi = parseInt(answer);
 
