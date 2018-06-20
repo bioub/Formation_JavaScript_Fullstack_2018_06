@@ -19,5 +19,11 @@ nbs
     console.log(nb);
   });
 
+// 0 + 2 = 2
+// 2 + 3 = 5
+// 5 + 4 = 9
+const sum = nbs.reduce((acc, nb) => acc + nb, 0);
+console.log(sum);
+
 console.log('Fin');
 

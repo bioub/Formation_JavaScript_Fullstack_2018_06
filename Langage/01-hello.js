@@ -8,6 +8,13 @@
  */
 const sum = (a, b) => a + b;
 
+/**
+ *
+ * @param {string} name
+ */
+const hello = (name) => `Hello ${name.toUpperCase()} !`;
+
+
 for (let i = 0; i < 3; i++) {
   console.log(sum(i, i));
 }

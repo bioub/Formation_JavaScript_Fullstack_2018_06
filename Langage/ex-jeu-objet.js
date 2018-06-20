@@ -20,11 +20,6 @@ const random = {
   },
 };
 
-
-
-
-
-
 const readline = require('readline');
 
 function Jeu(options) {
