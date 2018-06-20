@@ -1,6 +1,6 @@
-const random = require('./random');
-const readline = require('readline');
-const chalk = require('chalk');
+import { getRandomIntInclusive } from './random';
+import readline from 'readline';
+import chalk from 'chalk';
 
 // 2 - class
 class Jeu {
@@ -18,7 +18,7 @@ class Jeu {
     //const max = options.max !== undefined ? options.max : 100;
     const { min = 0, max = 100 } = options;
 
-    this._entierAlea = random.getIntInclusive(min, max);
+    this._entierAlea = getRandomIntInclusive(min, max);
     this._essais = [];
     this._rl = readline.createInterface({
       input: process.stdin,
@@ -60,4 +60,4 @@ class Jeu {
   }
 }
 
-module.exports = Jeu;
+export default Jeu;
