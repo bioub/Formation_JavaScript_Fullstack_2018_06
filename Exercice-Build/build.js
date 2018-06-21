@@ -55,4 +55,4 @@ async function buildHTML() {
     buildHTML(),
   ]);
   console.log('Fin du build');
-})();
+})().catch((err) => console.log(err));
