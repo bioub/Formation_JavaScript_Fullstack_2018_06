@@ -1,3 +1,7 @@
-<p>
-  contacts-show works!
-</p>
+<p>Prénom : {{contact?.firstName}}</p>
+<p>Nom : {{contact?.lastName}}</p>
+
+<p *ngIf="contact?.email">Email : {{contact?.email}}</p>
+<p *ngIf="contact?.telephone">Téléphone : {{contact?.telephone}}</p>
+
+<p *ngIf="contact?.company">Téléphone : {{contact?.company.name}}</p>

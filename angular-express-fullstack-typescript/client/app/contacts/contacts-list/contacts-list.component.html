@@ -1,3 +1,9 @@
-<p>
-  contacts-list works!
-</p>
+<div>
+  <a [routerLink]="['create']">Ajouter</a>
+</div>
+
+<ul>
+  <li *ngFor="let contact of contacts$ | async">
+    <a [routerLink]="[contact._id]">{{contact.firstName}} {{contact.lastName}}</a>
+  </li>
+</ul>

@@ -1,3 +1,7 @@
-<p>
-  contacts-create works!
-</p>
+<form (submit)="onSubmit()">
+  <p>Prénom : <input name="firstName" [(ngModel)]="contact.firstName"></p>
+  <p>Nom : <input name="lastName" [(ngModel)]="contact.lastName"></p>
+  <p>
+    <button>Ajouter</button>
+  </p>
+</form>
