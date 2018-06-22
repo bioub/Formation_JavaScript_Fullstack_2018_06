@@ -2,6 +2,7 @@ import * as express from 'express';
 import * as morgan from 'morgan';
 import { config } from './config';
 import { contactRouter } from './api/contact';
+import { companyRouter } from './api/company';
 import { notFound } from './api/middlewares/not-found';
 import { errorHandler } from './api/middlewares/error-handler';
 
@@ -12,6 +13,7 @@ if (!config.production) {
 }
 
 app.use('/api/contacts', contactRouter);
+app.use('/api/companies', companyRouter);
 
 // Exercice : Créer un dossier /server/api/societe en s'inspirant de contact
 // et l'importer ici

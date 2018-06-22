@@ -2,32 +2,32 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import { createCtrl, listCtrl, removeCtrl, showCtrl, updateCtrl } from './controllers';
 
-const contactRouter = express.Router();
+const companyRouter = express.Router();
 
-contactRouter.get('/',
+companyRouter.get('/',
   listCtrl,
 );
 
-contactRouter.post('/',
+companyRouter.post('/',
 //  authenticate,
 //  isAdmin,
   bodyParser.json(),
   createCtrl,
 );
 
-contactRouter.get('/:id',
+companyRouter.get('/:id',
   showCtrl,
 );
 
-contactRouter.delete('/:id',
+companyRouter.delete('/:id',
   removeCtrl,
 );
 
-contactRouter.patch('/:id',
+companyRouter.patch('/:id',
   bodyParser.json(),
   updateCtrl,
 );
 
 export {
-  contactRouter,
+  companyRouter,
 };

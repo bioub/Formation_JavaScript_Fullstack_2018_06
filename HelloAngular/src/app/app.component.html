@@ -1,0 +1,10 @@
+<!-- <app-horloge [format]="'HH:mm:ss'"></app-horloge> -->
+<app-horloge format="HH:mm:ss"></app-horloge>
+<app-horloge format="HH:mm"></app-horloge>
+
+<div>
+  Prénom : <input [value]="prenom" (input)="prenom = $event.target.value">
+</div>
+<p *ngIf="prenom.length">
+  Bonjour {{prenom}} !!!
+</p>

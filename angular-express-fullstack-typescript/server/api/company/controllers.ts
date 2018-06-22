@@ -1,16 +1,16 @@
-import { ContactModel } from './model'
-import { Contact } from '../../../common/models/contact';
+import { Model } from './model'
+import { Company } from '../../../common/models/company';
 
 /**
- * Controller Contact List
+ * Controller Company List
  * @param {import('express').Request} req
  * @param {import('express').Response} res
  * @param {function} next
  */
 async function listCtrl(req, res, next) {
   try {
-    const contacts = await ContactModel.find({}, 'firstName lastName').limit(100);
-    res.json(contacts);
+    const entities: Company[] = await Model.find().limit(100);
+    res.json(entities);
   }
   catch (err) {
     next(err);
@@ -18,21 +18,21 @@ async function listCtrl(req, res, next) {
 };
 
 /**
- * Controller Contact Show
+ * Controller Company Show
  * @param {import('express').Request} req
  * @param {import('express').Response} res
  * @param {function} next
  */
 async function showCtrl(req, res, next) {
   try {
-    const contact: Contact = await ContactModel.findById(req.params.id).populate('company');
+    const entity: Company = await Model.findById(req.params.id);
 
-    if (!contact) {
-      req.notFoundReason = 'Contact not found';
+    if (!entity) {
+      req.notFoundReason = 'Company not found';
       return next();
     }
 
-    res.json(contact);
+    res.json(entity);
   }
   catch (err) {
     next(err);
@@ -40,16 +40,16 @@ async function showCtrl(req, res, next) {
 };
 
 /**
- * Controller Contact Create
+ * Controller Company Create
  * @param {import('express').Request} req
  * @param {import('express').Response} res
  * @param {function} next
  */
 async function createCtrl(req, res, next) {
   try {
-    const contact = await ContactModel.create(req.body);
+    const entity = await Model.create(req.body);
     res.statusCode = 201;
-    res.json(contact);
+    res.json(entity);
   }
   catch (err) {
     next(err);
@@ -57,21 +57,21 @@ async function createCtrl(req, res, next) {
 };
 
 /**
- * Controller Contact Remove
+ * Controller Company Remove
  * @param {import('express').Request} req
  * @param {import('express').Response} res
  * @param {function} next
  */
 async function removeCtrl(req, res, next) {
   try {
-    const contact = await ContactModel.findByIdAndRemove(req.params.id);
+    const entity = await Model.findByIdAndRemove(req.params.id);
 
-    if (!contact) {
-      req.notFoundReason = 'Contact not found';
+    if (!entity) {
+      req.notFoundReason = 'Company not found';
       return next();
     }
 
-    res.json(contact);
+    res.json(entity);
   }
   catch (err) {
     next(err);
@@ -79,21 +79,21 @@ async function removeCtrl(req, res, next) {
 };
 
 /**
- * Controller Contact Update
+ * Controller Company Update
  * @param {import('express').Request} req
  * @param {import('express').Response} res
  * @param {function} next
  */
 async function updateCtrl(req, res, next) {
   try {
-    const contact = await ContactModel.findByIdAndUpdate(req.params.id, req.body);
+    const entity = await Model.findByIdAndUpdate(req.params.id, req.body);
 
-    if (!contact) {
-      req.notFoundReason = 'Contact not found';
+    if (!entity) {
+      req.notFoundReason = 'Company not found';
       return next();
     }
 
-    res.json(contact);
+    res.json(entity);
   }
   catch (err) {
     next(err);

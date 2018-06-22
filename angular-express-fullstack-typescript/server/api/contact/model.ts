@@ -11,8 +11,14 @@ const schema = new mongoose.Schema({
   },
   email: String,
   telephone: String,
+  company: { type: mongoose.Schema.Types.ObjectId, ref: 'Company' },
   updated: { type: Date, default: Date.now },
 });
 
+/*
+schema.pre('save', () => {
 
-export const Contact = mongoose.model('Contact', schema);
+})
+*/
+
+export const ContactModel = mongoose.model('Contact', schema);

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ab-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  preserveWhitespaces: true,
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ab';
+  title = 'app';
+  prenom = 'Inconnu';
 }

@@ -20,6 +20,9 @@
 		},
 		{
 			"path": "angular-express-fullstack-typescript"
+		},
+		{
+			"path": "HelloAngular"
 		}
 	],
 	"settings": {}
